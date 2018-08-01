@@ -1,0 +1,24 @@
+database:
+  connection:
+    host: host
+    port: port
+    dbname: database
+    user: user
+    password: password
+
+  views:
+    earliest_project: earliest_project
+    loc_commit_file_ext: loc_commit_file_ext
+    loc_user_file_ext: loc_user_file_ext
+    candidates_java_py: candidates_java_py
+    candidates_cpp_py: candidates_cpp_py
+    candidates_fun_py: candidates_fun_py
+
+paths:
+  downloads:
+  download_archive:
+  detections:
+    java_python:
+    cpp_python:
+    fun_python:
+  plots:
