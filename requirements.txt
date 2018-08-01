@@ -1,0 +1,15 @@
+cffi==1.11.5
+cycler==0.10.0
+gitdb2==2.0.3
+GitPython==2.1.10
+kiwisolver==1.0.1
+matplotlib==2.2.2
+numpy==1.14.5
+psycopg2==2.7.4
+pycparser==2.18
+pyparsing==2.2.0
+python-dateutil==2.7.3
+pytz==2018.5
+PyYAML==3.12
+six==1.11.0
+smmap2==2.0.3
