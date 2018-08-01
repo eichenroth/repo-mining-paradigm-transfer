@@ -1,16 +1,11 @@
 import ast
 
-from src.python_language_analyzer.detection import BuiltInFunctionDetection
-from src.python_language_analyzer.detector import get_last_line, Detector
+from src.python_language_analyzer.detector import Detector, Detection
 
 
 class BuiltInFunctionDetector(Detector):
     def __call__(self):
-        file_module = ast.parse(''.join(self.file))
-        built_in_function_visitor = BuiltInFunctionVisitor()
-        built_in_function_visitor.visit(file_module)
-
-        return built_in_function_visitor.detections
+        return super().__call__(BuiltInFunctionVisitor())
 
 
 class BuiltInFunctionVisitor(ast.NodeVisitor):
@@ -27,10 +22,11 @@ class BuiltInFunctionVisitor(ast.NodeVisitor):
 
     def visit_Call(self, node):
         if hasattr(node.func, 'id') and node.func.id in self.BUILT_IN_FUNCTIONS:
-            detection = BuiltInFunctionDetection()
-            detection['name'] = node.func.id
-            detection.begin = node.lineno
-            detection.end = get_last_line(node)
+            detection = BuiltInFunctionDetection(node, name=node.func.id)
             self.detections.append(detection)
 
         self.generic_visit(node)
+
+
+class BuiltInFunctionDetection(Detection):
+    INFO_KEYS = ['name']
