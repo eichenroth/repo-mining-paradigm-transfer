@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('agg')
+
 from src.github.plotter import Plotter
 from src.python_language_analyzer.aggregator import Aggregator
 from src.python_language_analyzer.detectors.built_in_function_detector import BuiltInFunctionDetection
