@@ -10,6 +10,6 @@ pycparser==2.18
 pyparsing==2.2.0
 python-dateutil==2.7.3
 pytz==2018.5
-PyYAML==3.12
+PyYAML==5.1
 six==1.11.0
 smmap2==2.0.3
